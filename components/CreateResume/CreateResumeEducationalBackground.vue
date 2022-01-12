@@ -341,7 +341,6 @@ export default {
     },
     goToEditMode(index) {
       if (!this.editingEducations.length) {
-        // this.editingEducations = [...this.educations]
         this.educations.forEach((item) => {
           this.editingEducations.push({ ...item });
         });
@@ -350,11 +349,10 @@ export default {
     },
   },
   created() {
-    if (this.value && this.value.length) {
-      return this.value.forEach((item) => {
+    if (this.value && this.value.length)
+      this.value.forEach((item) => {
         this.educations.push({ ...item });
       });
-    }
   },
 };
 </script>

@@ -308,21 +308,18 @@ export default {
     },
     goToEditMode(index) {
       if (!this.editingWorks.length) {
-        // this.editingWorks = [...this.works]
         this.works.forEach((item) => {
           this.editingWorks.push({ ...item });
         });
       }
       this.works[index].editingMode = true;
-      console.log(this.works);
     },
   },
   created() {
-    if (this.value && this.value.length) {
-      return this.value.forEach((item) => {
+    if (this.value && this.value.length)
+      this.value.forEach((item) => {
         this.works.push({ ...item });
       });
-    }
   },
 };
 </script>

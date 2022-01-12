@@ -147,11 +147,10 @@ export default {
   },
 
   created() {
-    if (this.value && this.value.length) {
-      return this.value.forEach((item) => {
+    if (this.value && this.value.length)
+      this.value.forEach((item) => {
         this.skills.push(item);
       });
-    }
   },
 };
 </script>

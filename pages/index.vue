@@ -103,23 +103,14 @@ export default {
       );
     },
     goToReviewPage() {
-      if (!this.validateResumeInformation())
-        return alert("please fill fiels");
+      if (!this.validateResumeInformation()) return alert("please fill fiels");
       this.setResumeInformations(this.resume);
       this.$router.push({ name: "review" });
     },
   },
   created() {
     if (this.resumeInformation.educational)
-      return (this.resume = { ...this.resumeInformation });
-  },
-  watch: {
-    resume: {
-      deep: true,
-      handler(newVal) {
-        console.log(newVal);
-      },
-    },
+      this.resume = { ...this.resumeInformation };
   },
 };
 </script>
